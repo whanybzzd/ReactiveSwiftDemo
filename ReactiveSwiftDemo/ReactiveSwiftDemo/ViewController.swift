@@ -54,10 +54,7 @@ class ViewController: UIViewController {
             verifyCodeButton.reactive.title <~ viewModel.verifyCodeText
             
 //            verifyCodeButton.reactive.pressed = CocoaAction<UIButton>(viewModel.getVerifyCodeAction)
-            verifyCodeButton.reactive.controlEvents(UIControlEvents.touchUpInside).observeValues {[unowned self] (button) in
-                
-                self.viewModel.getVerifyCodeAction
-            }
+           
             
            
             viewModel.getVerifyCodeAction.errors.observeValues { (error) in
@@ -65,10 +62,8 @@ class ViewController: UIViewController {
             }
             
 //            submitButton.reactive.pressed = CocoaAction<UIButton>(viewModel.submitAction)
-            submitButton.reactive.controlEvents(.touchUpInside).observeValues {[unowned self] (button) in
-                
-                self.viewModel.submitAction
-            }
+            
+            
             viewModel.submitAction.errors.observeValues { (error) in
                 
                  print("错误2:\(error)")
