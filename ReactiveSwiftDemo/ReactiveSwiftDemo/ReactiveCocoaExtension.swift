@@ -10,24 +10,10 @@ import Result
 import ReactiveCocoa
 import ReactiveSwift
 
-typealias NSignal<T> = ReactiveSwift.Signal<T, NoError>
-typealias AnySignal = ReactiveSwift.Signal<Any?, NoError>
-typealias APISignal<T> = ReactiveSwift.Signal<T, APIError>
-typealias AnyAPISignal = ReactiveSwift.Signal<Any?, APIError>
-
-typealias Producer<T> = ReactiveSwift.SignalProducer<T, NoError>
-typealias AnyProducer = ReactiveSwift.SignalProducer<Any?, NoError>
-typealias APIProducer<T> = ReactiveSwift.SignalProducer<T, APIError>
-typealias AnyAPIProducer = ReactiveSwift.SignalProducer<Any?, APIError>
-
-typealias NAction<I, O> = ReactiveSwift.Action<I, O, NoError>
-typealias AnyAction = ReactiveSwift.Action<Any?, Any?, NoError>
-typealias APIAction<O> = ReactiveSwift.Action<[String: String]?, O, APIError>
-typealias AnyAPIAction = ReactiveSwift.Action<Any?, Any?, APIError>
 
 typealias ButtonAction = ReactiveCocoa.CocoaAction<UIButton>
 
-extension SignalProducer where Error == APIError {
+extension SignalProducer where Error == NoError {
     
     @discardableResult
     func startWithValues(_ action: @escaping (Value) -> Void) -> Disposable {
