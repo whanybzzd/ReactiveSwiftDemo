@@ -10,6 +10,8 @@
 		885483AC20E22649002847CD /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885483AB20E22649002847CD /* RegisterViewModel.swift */; };
 		885483AE20E23541002847CD /* UserAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885483AD20E23541002847CD /* UserAPIManager.swift */; };
 		885483B020E244D7002847CD /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885483AF20E244D7002847CD /* StringExtension.swift */; };
+		885483B220E25565002847CD /* ReactiveCocoaExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885483B120E25565002847CD /* ReactiveCocoaExtension.swift */; };
+		885483B420E2558E002847CD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885483B320E2558E002847CD /* APIError.swift */; };
 		97899C9867BBBB7D23229222 /* Pods_ReactiveSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7ACC90C5BDF8B7F259AC7B /* Pods_ReactiveSwiftDemo.framework */; };
 		9A077AEC20E1158000799922 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A077AEB20E1158000799922 /* AppDelegate.swift */; };
 		9A077AEE20E1158000799922 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A077AED20E1158000799922 /* ViewController.swift */; };
@@ -26,6 +28,8 @@
 		885483AB20E22649002847CD /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		885483AD20E23541002847CD /* UserAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIManager.swift; sourceTree = "<group>"; };
 		885483AF20E244D7002847CD /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		885483B120E25565002847CD /* ReactiveCocoaExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCocoaExtension.swift; sourceTree = "<group>"; };
+		885483B320E2558E002847CD /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		9A077AE820E1158000799922 /* ReactiveSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A077AEB20E1158000799922 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A077AED20E1158000799922 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 		9A077AEA20E1158000799922 /* ReactiveSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				885483B320E2558E002847CD /* APIError.swift */,
+				885483B120E25565002847CD /* ReactiveCocoaExtension.swift */,
 				885483AF20E244D7002847CD /* StringExtension.swift */,
 				9A077AEB20E1158000799922 /* AppDelegate.swift */,
 				9A077AED20E1158000799922 /* ViewController.swift */,
@@ -225,9 +231,11 @@
 				885483B020E244D7002847CD /* StringExtension.swift in Sources */,
 				885483AC20E22649002847CD /* RegisterViewModel.swift in Sources */,
 				9A077AF420E1158000799922 /* ReactiveSwiftDemo.xcdatamodeld in Sources */,
+				885483B220E25565002847CD /* ReactiveCocoaExtension.swift in Sources */,
 				885483AE20E23541002847CD /* UserAPIManager.swift in Sources */,
 				9A077B0120E1177400799922 /* JDContentView.swift in Sources */,
 				9A077AEC20E1158000799922 /* AppDelegate.swift in Sources */,
+				885483B420E2558E002847CD /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

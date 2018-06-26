@@ -53,7 +53,7 @@ class ViewController: UIViewController {
             
             verifyCodeButton.reactive.title <~ viewModel.verifyCodeText
             
-//            verifyCodeButton.reactive.pressed = CocoaAction<UIButton>(viewModel.getVerifyCodeAction)
+            verifyCodeButton.reactive.pressed = ButtonAction(viewModel.getVerifyCodeAction)
            
             
            
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
                 print("错误1:\(error)")
             }
             
-//            submitButton.reactive.pressed = CocoaAction<UIButton>(viewModel.submitAction)
+            submitButton.reactive.pressed = ButtonAction(viewModel.submitAction)
             
             
             viewModel.submitAction.errors.observeValues { (error) in

@@ -61,7 +61,8 @@ extension UserAPIManager{
         
         return SignalProducer {observer,disponsable in
             
-            
+            observer.send(value: "1")
+            observer.sendCompleted()
         }
     }
     
@@ -107,7 +108,8 @@ extension UserAPIManager{
         
         return SignalProducer {observer,disponsable in
             
-            
+            observer.send(value: "111111")
+            observer.sendCompleted()
         }
     }
 }

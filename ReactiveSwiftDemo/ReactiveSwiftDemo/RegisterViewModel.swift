@@ -170,6 +170,7 @@ class RegisterViewModel {
         
         return UserAPIManager.sharedInstance.getVerifyCodess1(phoneNumber: "").on(value:{ response in
             
+            self.timer?.invalidate()
         })
     }
     
