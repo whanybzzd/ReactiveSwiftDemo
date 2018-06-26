@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		885483AC20E22649002847CD /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885483AB20E22649002847CD /* RegisterViewModel.swift */; };
+		885483AE20E23541002847CD /* UserAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885483AD20E23541002847CD /* UserAPIManager.swift */; };
+		885483B020E244D7002847CD /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885483AF20E244D7002847CD /* StringExtension.swift */; };
 		97899C9867BBBB7D23229222 /* Pods_ReactiveSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7ACC90C5BDF8B7F259AC7B /* Pods_ReactiveSwiftDemo.framework */; };
 		9A077AEC20E1158000799922 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A077AEB20E1158000799922 /* AppDelegate.swift */; };
 		9A077AEE20E1158000799922 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A077AED20E1158000799922 /* ViewController.swift */; };
@@ -20,6 +23,9 @@
 /* Begin PBXFileReference section */
 		3439CAA451FBE9D3905F51BC /* Pods-ReactiveSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveSwiftDemo/Pods-ReactiveSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		695F4E2DDEB070740E52B0D0 /* Pods-ReactiveSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveSwiftDemo/Pods-ReactiveSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
+		885483AB20E22649002847CD /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		885483AD20E23541002847CD /* UserAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIManager.swift; sourceTree = "<group>"; };
+		885483AF20E244D7002847CD /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		9A077AE820E1158000799922 /* ReactiveSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A077AEB20E1158000799922 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A077AED20E1158000799922 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +80,7 @@
 		9A077AEA20E1158000799922 /* ReactiveSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				885483AF20E244D7002847CD /* StringExtension.swift */,
 				9A077AEB20E1158000799922 /* AppDelegate.swift */,
 				9A077AED20E1158000799922 /* ViewController.swift */,
 				9A077AEF20E1158000799922 /* Main.storyboard */,
@@ -82,6 +89,8 @@
 				9A077AFA20E1158400799922 /* Info.plist */,
 				9A077AF220E1158000799922 /* ReactiveSwiftDemo.xcdatamodeld */,
 				9A077B0020E1177400799922 /* JDContentView.swift */,
+				885483AB20E22649002847CD /* RegisterViewModel.swift */,
+				885483AD20E23541002847CD /* UserAPIManager.swift */,
 			);
 			path = ReactiveSwiftDemo;
 			sourceTree = "<group>";
@@ -213,7 +222,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A077AEE20E1158000799922 /* ViewController.swift in Sources */,
+				885483B020E244D7002847CD /* StringExtension.swift in Sources */,
+				885483AC20E22649002847CD /* RegisterViewModel.swift in Sources */,
 				9A077AF420E1158000799922 /* ReactiveSwiftDemo.xcdatamodeld in Sources */,
+				885483AE20E23541002847CD /* UserAPIManager.swift in Sources */,
 				9A077B0120E1177400799922 /* JDContentView.swift in Sources */,
 				9A077AEC20E1158000799922 /* AppDelegate.swift in Sources */,
 			);
