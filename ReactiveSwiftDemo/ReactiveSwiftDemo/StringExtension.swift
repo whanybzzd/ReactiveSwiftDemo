@@ -1,9 +1,9 @@
 //
-//  StringExtension.swift
-//  TSwift
+//  ViewController.swift
+//  ReactiveSwiftDemo
 //
-//  Created by 黑花白花 on 2017/6/17.
-//  Copyright © 2017年 HeiHuaBaiHua. All rights reserved.
+//  Created by ZMJ on 2018/6/25.
+//  Copyright © 2018年 ZMJ. All rights reserved.
 //
 
 import UIKit
