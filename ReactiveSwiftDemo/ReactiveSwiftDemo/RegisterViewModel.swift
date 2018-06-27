@@ -36,6 +36,7 @@ protocol RegisterViewModelProtocol {
     //验证码输入框
     var verifyCodeText:MutableProperty<String>{get}
     
+    var verifyCodeButtonColor:MutableProperty<String>{get}
     //获取验证码按钮方法
     var getVerifyCodeAction:Action<Any?, Any?, NoError>{get}
     //提交按钮的方法
@@ -60,6 +61,7 @@ class RegisterViewModel {
     
     private(set) var verifyCodeText = MutableProperty("验证码")
     
+    private(set) var verifyCodeButtonColor = MutableProperty("vale")//站位
     //获取验证码按钮事件
     private(set) lazy var getVerifyCodeAction = Action<Any?, Any?, NoError>(enabledIf: self.enableGetVerifyCode) { [unowned self] _ -> SignalProducer<Any?, NoError> in
         return self.getVerifyCodeProducer
@@ -82,6 +84,7 @@ class RegisterViewModel {
             
             let account = text?.substring(to: 11)
             self?.erors.account = !(account?.isValidPhoneNum)! ? InvalidAccount : ""
+            self?.verifyCodeButtonColor.value = !(account?.isValidPhoneNum)! ? InvalidAccount : ""
             return account!
         })
         

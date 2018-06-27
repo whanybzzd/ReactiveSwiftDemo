@@ -53,6 +53,11 @@ class ViewController: UIViewController {
             
             verifyCodeButton.reactive.title <~ viewModel.verifyCodeText
             
+            //增加背景颜色的判断
+            verifyCodeButton.reactive.backgroundColor <~ viewModel.validAccount.map({[weak self]_ in
+                
+                self?.viewModel.verifyCodeButtonColor.value.count == 0 ? UIColor.red : UIColor.lightGray
+            })
             verifyCodeButton.reactive.pressed = ButtonAction(viewModel.getVerifyCodeAction)
            
             
@@ -63,7 +68,11 @@ class ViewController: UIViewController {
             
             submitButton.reactive.pressed = ButtonAction(viewModel.submitAction)
             
-            
+            //增加背景颜色的判断
+            submitButton.reactive.backgroundColor <~ viewModel.errorText.map({
+                
+                $0.count == 0 ? UIColor.red : UIColor.lightGray
+            })
             viewModel.submitAction.errors.observeValues { (error) in
                 
                  print("错误2:\(error)")
