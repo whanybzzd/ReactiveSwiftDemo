@@ -23,14 +23,42 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.view.addSubview(contentView)
+        self.view.addSubview(contentView)
         //代替delegate
-//        contentView.signalTap.observeValues {[weak self] (contentView) in
+        contentView.signalTap.observeValues {[weak self] (contentView) in
+
+            print("点击")
+            self?.click()
+
+        }
+        
+        //当文本框输入的值大于3后才输出
+//        contentView.userNameText.reactive.continuousTextValues.filter { (text) -> Bool in
 //
-//            print("点击")
-//            self?.click()
+//            return (text?.count)! > 3
+//            }.observeValues { (value) in
 //
+//                print("value:\(value!)")
 //        }
+        
+        
+        
+        contentView.userNameText.reactive.continuousTextValues
+            .map{(text)->Int in
+                
+                return (text?.count)!
+            }.map{(length)->UIColor in
+                
+                return length>5 ? UIColor.blue : UIColor.lightGray
+            }.observeValues {[weak self] (color) in
+                
+                self?.contentView.userNameText.textColor=color
+        }
+        
+        
+        
+        
+        
         
         viewModel = RegisterViewModel()
     }
@@ -92,7 +120,7 @@ class ViewController: UIViewController {
     
     lazy var contentView:JDContentView = {
         
-        let view=JDContentView(frame: CGRect(x: 30, y: 200, width: 200, height: 200))
+        let view=JDContentView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height))
         
         return view
         
@@ -164,6 +192,19 @@ class ViewController: UIViewController {
         mergeObserver.sendCompleted()
         mergeOberver1.send(value: "222")
         mergeOberver1.sendCompleted()
+        
+        
+        self.view.reactive.producer(forKeyPath: "bounds").start { (rect) in
+            
+            print(self.view)
+        }
+        
+        NotificationCenter.default.reactive.notifications(forName: Notification.Name(""), object: nil).observeValues { (noti) in
+            
+            
+        }
+        NotificationCenter.default.post(name: NSNotification.Name(""), object: nil)
+        
         
         
         
