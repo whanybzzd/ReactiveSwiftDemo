@@ -24,6 +24,24 @@ class JDContentView: UIView {
             make.top.equalTo(100)
             make.height.equalTo(50)
         }
+        
+        
+        let testView=UIView()
+        testView.backgroundColor=UIColor.cyan
+        self.addSubview(testView)
+        testView.snp.makeConstraints { (make) in
+            
+            make.width.height.equalTo(300)
+            make.center.equalToSuperview()
+        }
+        
+        let testView2=UIView()
+        testView2.backgroundColor=UIColor.black
+        testView.addSubview(testView2)
+        testView2.snp.makeConstraints { (make) in
+            
+            make.edges.equalToSuperview().inset(UIEdgeInsetsMake(10, 10, 10, 10))
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
