@@ -9,8 +9,9 @@
 import UIKit
 import ReactiveSwift
 import Result
+import SnapKit
 class JDContentView: UIView {
-    
+    var updateConstraint:Constraint?
  let (signalTap , observerTap) = Signal<Any, NoError>.pipe()
     
     override init(frame: CGRect) {
@@ -31,19 +32,39 @@ class JDContentView: UIView {
         self.addSubview(testView)
         testView.snp.makeConstraints { (make) in
             
-            make.width.height.equalTo(300)
+            make.width.height.equalTo(100)
             make.center.equalToSuperview()
         }
         
         let testView2=UIView()
         testView2.backgroundColor=UIColor.black
-        testView.addSubview(testView2)
+        self.addSubview(testView2)
         testView2.snp.makeConstraints { (make) in
             
-            make.edges.equalToSuperview().inset(UIEdgeInsetsMake(10, 10, 10, 10))
+            //make.edges.equalToSuperview().inset(UIEdgeInsetsMake(10, 10, 10, 10))
+        
+            //make.top.equalTo(testView.snp.bottom).offset(10)
+            //make.width.height.greaterThanOrEqualTo(testView)
+            //make.width.height.equalTo(100)
+            make.size.equalTo(CGSize(width: 200, height: 200))
+            //make.centerX.lessThanOrEqualTo(testView.snp.leading)
+           // make.left.equalTo(testView.snp.left)
+            self.updateConstraint=make.left.top.equalTo(10).constraint
         }
+        
+        let updateButton = UIButton(type: .custom)
+        updateButton.backgroundColor = UIColor.brown
+        updateButton.frame = CGRect(x: 100, y: 80, width: 50, height: 30)
+        updateButton.setTitle("更新", for: .normal)
+        updateButton.addTarget(self, action: #selector(updateConstraintMethod), for: .touchUpInside)
+        self.addSubview(updateButton)
+        
     }
-    
+    // 更新约束
+    @objc func updateConstraintMethod() {
+        
+        self.updateConstraint?.update(offset: 50)   // 更新距离父视图上、左为50
+    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
