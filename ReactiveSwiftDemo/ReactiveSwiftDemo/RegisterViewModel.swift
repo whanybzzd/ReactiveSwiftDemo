@@ -42,6 +42,7 @@ protocol RegisterViewModelProtocol {
     //提交按钮的方法
     var submitAction:Action<Any?, Any?, NoError>{get}
     
+    
 }
 
 extension RegisterViewModel:RegisterViewModelProtocol{}
@@ -53,11 +54,15 @@ class RegisterViewModel {
     private(set) var validEnsurePassword = MutableProperty("")
     private(set) var validVerifyCode = MutableProperty("")
     
+    
+    
     private var erors = (account:InvalidAccount,password:InvalidPassword,verifyCode:InvalidVerifyCode)
     private(set) var errorText = MutableProperty("")
     
     private var timer:Timer?
     private var time = MutableProperty(60)
+    
+    
     
     private(set) var verifyCodeText = MutableProperty("验证码")
     
@@ -110,6 +115,7 @@ class RegisterViewModel {
             self?.erors.verifyCode = !isValidVerifyCode.evaluate(with: verifyCode) ? InvalidVerifyCode : ""
             return verifyCode!
         })
+        
     }
     
     

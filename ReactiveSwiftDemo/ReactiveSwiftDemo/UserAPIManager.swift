@@ -77,7 +77,6 @@ extension UserAPIManager{
     func getVerifyCodess1(phoneNumber: String) -> SignalProducer<Any?,NoError> {
         return SignalProducer<Any?,NoError>{ observer, disposable in
             
-            
             let firstSearch = SignalProducer<(), NoError>(value: ())
             let load = firstSearch.concat(SignalProducer.empty)
             load.on(value:{

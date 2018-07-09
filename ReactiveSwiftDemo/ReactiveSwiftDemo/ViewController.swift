@@ -11,7 +11,7 @@ import SnapKit
 import ReactiveSwift
 import ReactiveCocoa
 import Result
-class ViewController: UIViewController {
+class ViewController: UIViewController ,UISearchBarDelegate{
     
     @IBOutlet weak var accountTF: UITextField!//账号输入框
     @IBOutlet weak var passwordTF: UITextField!//密码输入框
@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var verifyCodeButton: UIButton!//获取验证码按钮
     @IBOutlet weak var errorLabel: UILabel!//错误描述Label
     @IBOutlet weak var submitButton: UIButton!//提交注册按钮
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,6 @@ class ViewController: UIViewController {
             self?.click()
 
         }
-        
         //当文本框输入的值大于3后才输出
 //        contentView.userNameText.reactive.continuousTextValues.filter { (text) -> Bool in
 //
@@ -205,6 +205,59 @@ class ViewController: UIViewController {
         }
         NotificationCenter.default.post(name: NSNotification.Name(""), object: nil)
         
+        
+        //let viewModel:BaseModel=BaseModel()
+        //viewModel.innerObserver.send(value: 1)
+        
+        let lab=UILabel()
+        lab.reactive.text <~ viewModel.errorText
+        
+        
+        let barButton=UIBarButtonItem()
+        barButton.reactive.pressed=BarButtonAction(viewModel.submitAction)
+        
+        let barItem=UIBarItem()
+        barItem.reactive.image <~ viewModel.validAccount.map({_ in
+            
+            UIImage.init(named: "")
+        })
+        
+        
+        let navigation=UINavigationItem(title: "我爱你")
+        navigation.reactive.leftBarButtonItem <~ viewModel.validAccount.map({_ in
+            
+            UIBarButtonItem(barButtonSystemItem: .action, target: nil, action: nil)
+        })
+        
+        navigation.reactive.rightBarButtonItem <~ viewModel.validAccount.map({_ in
+            
+            UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
+        })
+        
+        
+        let progress=UIProgressView(progressViewStyle: .default)
+        progress.reactive.progress <~ viewModel.validAccount.map({ text in
+            
+            let pro=Float(text)!
+           return pro/2.00
+        })
+        
+        
+        let searchBar=UISearchBar()
+        searchBar.delegate=self
+        searchBar.reactive.searchButtonClicked.observeValues { (search) in
+            
+            
+        }
+        searchBar.reactive.selectedScopeButtonIndex <~ viewModel.errorText.map({_ in
+            
+            2
+        })
+        
+        searchBar.reactive.isHidden <~ viewModel.errorText.map({_ in
+            
+             true
+        })
         
         
         

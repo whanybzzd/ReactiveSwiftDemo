@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		884BC59B20EF0CCC007195EF /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884BC59A20EF0CCC007195EF /* BaseModel.swift */; };
 		885483AC20E22649002847CD /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885483AB20E22649002847CD /* RegisterViewModel.swift */; };
 		885483AE20E23541002847CD /* UserAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885483AD20E23541002847CD /* UserAPIManager.swift */; };
 		885483B020E244D7002847CD /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885483AF20E244D7002847CD /* StringExtension.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		3439CAA451FBE9D3905F51BC /* Pods-ReactiveSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveSwiftDemo/Pods-ReactiveSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		695F4E2DDEB070740E52B0D0 /* Pods-ReactiveSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveSwiftDemo/Pods-ReactiveSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
+		884BC59A20EF0CCC007195EF /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		885483AB20E22649002847CD /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		885483AD20E23541002847CD /* UserAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIManager.swift; sourceTree = "<group>"; };
 		885483AF20E244D7002847CD /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				9A077B0020E1177400799922 /* JDContentView.swift */,
 				885483AB20E22649002847CD /* RegisterViewModel.swift */,
 				885483AD20E23541002847CD /* UserAPIManager.swift */,
+				884BC59A20EF0CCC007195EF /* BaseModel.swift */,
 			);
 			path = ReactiveSwiftDemo;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				884BC59B20EF0CCC007195EF /* BaseModel.swift in Sources */,
 				9A077AEE20E1158000799922 /* ViewController.swift in Sources */,
 				885483B020E244D7002847CD /* StringExtension.swift in Sources */,
 				885483AC20E22649002847CD /* RegisterViewModel.swift in Sources */,

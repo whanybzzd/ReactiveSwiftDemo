@@ -12,6 +12,7 @@ import ReactiveSwift
 
 
 typealias ButtonAction = ReactiveCocoa.CocoaAction<UIButton>
+typealias BarButtonAction = ReactiveCocoa.CocoaAction<UIBarButtonItem>
 
 extension SignalProducer where Error == NoError {
     
